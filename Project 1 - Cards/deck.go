@@ -22,9 +22,9 @@ func start_game() deck {
 		_, err := fmt.Scanf("%d\n", &selection)
 
 		if err != nil {
-			fmt.Println("Error reading input. Please try again.\n")
+			fmt.Printf("Error reading input. Please try again.\n")
 		} else if selection != 1 && selection != 2 {
-			fmt.Println("Invalid selection. Please choose either 1 or 2.\n")
+			fmt.Printf("Invalid selection. Please choose either 1 or 2.\n")
 		}
 
 		if selection == 1 {
