@@ -13,7 +13,9 @@ func main() {
 	//1.
 	//cards := new_deck()
 	//2.
-	cards := load_deck("my_cards")
+	//cards := load_deck("my_cards")
+	//3.
+	cards := start_game()
 
 	//shuffle the cards
 	cards.shuffle()

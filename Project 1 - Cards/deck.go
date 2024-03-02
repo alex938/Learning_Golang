@@ -14,6 +14,30 @@ import (
 
 type deck []string
 
+func start_game() deck {
+	var selection int
+
+	for {
+		fmt.Printf("Game Started\n1. New deck\n2. Load deck\n\nChoose: ")
+		_, err := fmt.Scanf("%d\n", &selection)
+
+		if err != nil {
+			fmt.Println("Error reading input. Please try again.\n")
+		} else if selection != 1 && selection != 2 {
+			fmt.Println("Invalid selection. Please choose either 1 or 2.\n")
+		}
+
+		if selection == 1 {
+			return new_deck()
+		} else if selection == 2 {
+			return load_deck("my_cards")
+		} else {
+			fmt.Println("Invalid selection. Please choose either 1 or 2.")
+		}
+	}
+
+}
+
 func new_deck() deck {
 	cards := deck{}
 
@@ -50,6 +74,7 @@ func (d deck) save_to_file(filename string) error {
 
 func load_deck(filename string) deck {
 	bs, err := ioutil.ReadFile(filename)
+
 	if err != nil {
 		fmt.Println("Error: ", err)
 		os.Exit(1)
