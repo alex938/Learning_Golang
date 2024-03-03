@@ -30,6 +30,6 @@ func main() {
 
 }
 
-func new_card() string {
-	return "Five of Diamonds"
-}
+//func new_card() string {
+//	return "Five of Diamonds"
+//}
