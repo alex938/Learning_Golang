@@ -1,6 +1,9 @@
 package main
 
-import "testing"
+import (
+	"testing"
+	"os"
+)
 
 func Test_new_deck(t *testing.T) {
 	d := new_deck()
@@ -28,4 +31,19 @@ func Test_new_deck(t *testing.T) {
 	if found != 1 {
 		t.Errorf("Something wrong with deck build - could not find Ace of Hearts")
 	}
+}
+
+func Test_save_to_file_and_load_deck(t *testing.T) {
+	os.Remove("./_testdeck")
+
+	deck_save_test := new_deck()
+	deck_save_test.save_to_file("_testdeck")
+
+	deck_load_test := load_deck("_testdeck")
+
+	if len(deck_load_test) != 52 {
+		t.Errorf("Error loading a deck, expected deck size of 52, but loaded %v", len(deck_load_test))
+	}
+
+	os.Remove("./_testdeck")
 }

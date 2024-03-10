@@ -49,7 +49,6 @@ func new_deck() deck {
 			cards = append(cards, values+" of "+suit)
 		}
 	}
-
 	return cards
 }
 

@@ -26,8 +26,8 @@ func main() {
 	dealt_hand, remaining_deck := deal(cards, 5)
 
 	dealt_hand.print()
-	remaining_deck.print()
 
+	remaining_deck.print()
 }
 
 //func new_card() string {
